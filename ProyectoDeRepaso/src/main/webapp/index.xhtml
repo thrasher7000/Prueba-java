@@ -8,8 +8,19 @@
     </h:head>
     <h:body>
         <h:form>
+            <p:messages autoUpdate="true" showDetail="true"/>
+            <h:panelGrid columns="2">
+                <p:outputLabel for="txtUsuario" value="Usuario"/>
+                <p:inputText id="txtUsuario" value="#{indexController.usuario.usuario}" required="true"/>
+                
+                <p:outputLabel for="txtClave" value="Clave"/>
+                <p:password id="txtClave" value="#{indexController.usuario.clave}" required="true"/>
+                
+                <p:column/>
+                <p:commandButton value="Iniciar sesión" icon="ui-icon-key" action="#{indexController.iniciarSesion()}"/>
+            </h:panelGrid>
+            <p:separator/>
             <p:link value="Crear cuenta" outcome="usuario"/>
-            <p:button value="commit"></p:button>
         </h:form>
     </h:body>
 </html>
